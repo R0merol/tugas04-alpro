@@ -17,7 +17,7 @@ void jobArray(){
     int jumlah2[kolom] = {};
     float rerata2[kolom] = {};
     for (int i = 0; i < baris; i++){
-        
+
         for (int j = 0; j < kolom; j++){
             jumlah[i] += data[i][j];
             jumlah2[j] += data[i][j];
@@ -84,7 +84,7 @@ void jobNestedLoop(){
 
 
 void jobNestedLoopIfElse(){
-    printf("########## Job Nested Loop ##########\n");
+    printf("########## Job Nested Loop If Else ##########\n");
     printf("\n");
     
     int jumlahTampilan = 3;
@@ -139,9 +139,9 @@ void jobNestedLoopIfElse(){
 
 
 int main(){
-    // jobArray();
-    // jobNestedLoop();
-    jobNestedLoopIfElse();
+    jobArray();
+    jobNestedLoop();
+    // jobNestedLoopIfElse();
 
     return 0;
 }
