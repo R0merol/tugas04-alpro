@@ -17,6 +17,7 @@ void jobArray(){
     int jumlah2[kolom] = {};
     float rerata2[kolom] = {};
     for (int i = 0; i < baris; i++){
+        
         for (int j = 0; j < kolom; j++){
             jumlah[i] += data[i][j];
             jumlah2[j] += data[i][j];
@@ -41,8 +42,8 @@ void jobArray(){
 
 void jobNestedLoop(){
     int jumlahTampilan = 3;
-    int panjang = 5;
     int tinggi = 5;
+    int panjang = 5;
     int tampilan[jumlahTampilan][tinggi][panjang] = {{
             {1, 1, 0, 0, 0},
             {1, 1, 0, 0, 0},
@@ -69,7 +70,64 @@ void jobNestedLoop(){
     printf("\n");
     for (int i = 0; i < jumlahTampilan; i++){
         printf("-- Tampilan #%d --\n", i + 1);
+
         for (int j = 0; j < tinggi; j++){
+
+            for (int k = 0; k < panjang; k++){
+                cout << tampilan[i][j][k] << " ";
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
+}
+
+
+void jobNestedLoopIfElse(){
+    printf("########## Job Nested Loop ##########\n");
+    printf("\n");
+    
+    int jumlahTampilan = 3;
+    int tinggi = 5;
+    int panjang = 5;
+    int tampilan[jumlahTampilan][tinggi][panjang] = {};
+
+    // If Else
+    for (int i = 0; i < jumlahTampilan; i++){
+        printf("### Tampilan #%d ###\n", i + 1);
+
+        for (int j = 0; j < tinggi; j++){
+            printf("-- Baris #%d --\n", j + 1);
+
+            for (int k = 0; k < panjang; k++){
+                
+                while (true){
+                    string inputUser = "";
+                    cout << "Input tampilan [0/1]: ";
+                    cin >> inputUser;
+                    if (inputUser == "0"){
+                        tampilan[i][j][k] = 0;
+                        break;
+                    } else if (inputUser == "1"){
+                        tampilan[i][j][k] = 1;
+                        break;
+                    } else {
+                        cout << "Input anda salah. Silahkan menginput 0 atau 1" << endl;
+                    }
+                }
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
+
+    printf("########## Hasil Tampilan ##########\n");
+    printf("\n");
+    for (int i = 0; i < jumlahTampilan; i++){
+        printf("-- Tampilan #%d --\n", i + 1);
+
+        for (int j = 0; j < tinggi; j++){
+
             for (int k = 0; k < panjang; k++){
                 cout << tampilan[i][j][k] << " ";
             }
@@ -81,8 +139,9 @@ void jobNestedLoop(){
 
 
 int main(){
-    jobArray();
-    jobNestedLoop();
+    // jobArray();
+    // jobNestedLoop();
+    jobNestedLoopIfElse();
 
     return 0;
 }
