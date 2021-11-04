@@ -16,6 +16,7 @@ void jobArray(){
     float rerata[baris] = {};
     int jumlah2[kolom] = {};
     float rerata2[kolom] = {};
+
     for (int i = 0; i < baris; i++){
 
         for (int j = 0; j < kolom; j++){
@@ -40,108 +41,63 @@ void jobArray(){
 }
 
 
-void jobNestedLoop(){
-    int jumlahTampilan = 3;
-    int tinggi = 5;
-    int panjang = 5;
-    int tampilan[jumlahTampilan][tinggi][panjang] = {{
-            {1, 1, 0, 0, 0},
-            {1, 1, 0, 0, 0},
-            {1, 1, 0, 0, 0},
-            {1, 1, 0, 0, 0},
-            {1, 1, 0, 0, 0},
-        }, {
-            {1, 1, 1, 1, 1},
-            {1, 1, 1, 1, 1},
-            {1, 1, 1, 1, 1},
-            {0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0}
-        }, {
-            {0, 1, 1, 1, 1},
-            {1, 0, 1, 1, 1},
-            {1, 1, 0, 1, 1},
-            {1, 1, 1, 0, 1},
-            {1, 1, 1, 1, 0},
-        }
-    };
-
-    // Gambar Tampilan
-    printf("########## Job Nested Loop ##########\n");
-    printf("\n");
-    for (int i = 0; i < jumlahTampilan; i++){
-        printf("-- Tampilan #%d --\n", i + 1);
-
-        for (int j = 0; j < tinggi; j++){
-
-            for (int k = 0; k < panjang; k++){
-                cout << tampilan[i][j][k] << " ";
-            }
-            cout << endl;
-        }
-        cout << endl;
-    }
-}
-
-
 void jobNestedLoopIfElse(){
     printf("########## Job Nested Loop If Else ##########\n");
     printf("\n");
-    
-    int jumlahTampilan = 3;
-    int tinggi = 5;
-    int panjang = 5;
-    int tampilan[jumlahTampilan][tinggi][panjang] = {};
 
-    // If Else
-    for (int i = 0; i < jumlahTampilan; i++){
-        printf("### Tampilan #%d ###\n", i + 1);
+    // Tampilan 1
+    printf("-- Tampilan #1 --\n");
+    for (int i = 0; i < 5; i++){
 
-        for (int j = 0; j < tinggi; j++){
-            printf("-- Baris #%d --\n", j + 1);
+        for (int j = 0; j < 5; j++){
 
-            for (int k = 0; k < panjang; k++){
-                
-                while (true){
-                    string inputUser = "";
-                    cout << "Input tampilan [0/1]: ";
-                    cin >> inputUser;
-                    if (inputUser == "0"){
-                        tampilan[i][j][k] = 0;
-                        break;
-                    } else if (inputUser == "1"){
-                        tampilan[i][j][k] = 1;
-                        break;
-                    } else {
-                        cout << "Input anda salah. Silahkan menginput 0 atau 1" << endl;
-                    }
-                }
+            if (j < 2){
+                cout << 1 << " ";
+            } else{
+                cout << 0 << " ";
             }
-            cout << endl;
         }
         cout << endl;
     }
+    cout << endl;
 
-    printf("########## Hasil Tampilan ##########\n");
-    printf("\n");
-    for (int i = 0; i < jumlahTampilan; i++){
-        printf("-- Tampilan #%d --\n", i + 1);
+    // Tampilan 2
+    printf("-- Tampilan #2 --\n");
+    for (int i = 0; i < 5; i++){
 
-        for (int j = 0; j < tinggi; j++){
+        for (int j = 0; j < 5; j++){
 
-            for (int k = 0; k < panjang; k++){
-                cout << tampilan[i][j][k] << " ";
+            if (i < 3){
+                cout << 1 << " ";
+            } else{
+                cout << 0 << " ";
             }
-            cout << endl;
         }
         cout << endl;
     }
+    cout << endl;
+
+    // Tampilan 3
+    printf("-- Tampilan #3 --\n");
+    for (int i = 0; i < 5; i++){
+
+        for (int j = 0; j < 5; j++){
+
+            if (i == j){
+                cout << 0 << " ";
+            } else{
+                cout << 1 << " ";
+            }
+        }
+        cout << endl;
+    }
+    cout << endl;
 }
 
 
 int main(){
     jobArray();
-    jobNestedLoop();
-    // jobNestedLoopIfElse();
+    jobNestedLoopIfElse();
 
     return 0;
 }
@@ -158,8 +114,8 @@ No.    | Data 1 | Data 2 | Data 3 | Data 4 | Jumlah | Rerata
 Jumlah | 18     | 20     | 12     | 13     |
 Rerata | 6.00   | 6.67   | 4.00   | 4.33   |
 
-# Hasil jobNestedLoop():
-########## Job Nested Loop ##########
+# Hasil jobNestedLoopIfElse():
+########## Job Nested Loop If Else ##########
 
 -- Tampilan #1 --
 1 1 0 0 0        
