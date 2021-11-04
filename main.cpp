@@ -3,33 +3,33 @@ using namespace std;
 
 
 void jobArray(){
-    int baris = 3;
-    int kolom = 4;
-    int data[baris][kolom] = {
+    printf("########## Job Array ##########\n\n");
+
+    const int BARIS = 3;
+    const int KOLOM = 4;
+    int data[BARIS][KOLOM] = {
         {6, 4, 4, 4},
         {7, 8, 2, 6},
         {5, 8, 6, 3}
     };
 
     // Kalkulasi Jumlah dan Rerata
-    int jumlah[baris] = {};
-    float rerata[baris] = {};
-    int jumlah2[kolom] = {};
-    float rerata2[kolom] = {};
+    int jumlah[BARIS] = {};
+    float rerata[BARIS] = {};
+    int jumlah2[KOLOM] = {};
+    float rerata2[KOLOM] = {};
 
-    for (int i = 0; i < baris; i++){
+    for (int i = 0; i < BARIS; i++){
 
-        for (int j = 0; j < kolom; j++){
+        for (int j = 0; j < KOLOM; j++){
             jumlah[i] += data[i][j];
             jumlah2[j] += data[i][j];
-            rerata2[j] = (float)jumlah2[j] / baris;
+            rerata[i] = (float)jumlah[i] / KOLOM;
+            rerata2[j] = (float)jumlah2[j] / BARIS;
         }
-        rerata[i] = (float)jumlah[i] / kolom;
     }
 
     // Gambar Tabel
-    printf("########## Job Array ##########\n");
-    printf("\n");
     printf("No.    | Data 1 | Data 2 | Data 3 | Data 4 | Jumlah | Rerata\n");
     printf("1      | %d      | %d      | %d      | %d      | %d     | %3.2f\n", data[0][0], data[0][1], data[0][2], data[0][3], jumlah[0], rerata[0]);
     printf("2      | %d      | %d      | %d      | %d      | %d     | %3.2f\n", data[1][0], data[1][1], data[1][2], data[1][3], jumlah[1], rerata[1]);
@@ -41,20 +41,21 @@ void jobArray(){
 }
 
 
-void jobNestedLoopIfElse(){
-    printf("########## Job Nested Loop If Else ##########\n");
-    printf("\n");
+void jobLoopIfElse(){
+    printf("########## Job Loop If Else ##########\n\n");
+
+    const int DIMENSI = 5;
 
     // Tampilan 1
-    printf("-- Tampilan #1 --\n");
-    for (int i = 0; i < 5; i++){
+    printf("-- Tampilan 1 --\n");
+    for (int i = 0; i < DIMENSI; i++){
 
-        for (int j = 0; j < 5; j++){
+        for (int j = 0; j < DIMENSI; j++){
 
             if (j < 2){
-                cout << 1 << " ";
+                cout << 1 << "\t";
             } else{
-                cout << 0 << " ";
+                cout << 0 << "\t";
             }
         }
         cout << endl;
@@ -62,15 +63,15 @@ void jobNestedLoopIfElse(){
     cout << endl;
 
     // Tampilan 2
-    printf("-- Tampilan #2 --\n");
-    for (int i = 0; i < 5; i++){
+    printf("-- Tampilan 2 --\n");
+    for (int i = 0; i < DIMENSI; i++){
 
-        for (int j = 0; j < 5; j++){
+        for (int j = 0; j < DIMENSI; j++){
 
             if (i < 3){
-                cout << 1 << " ";
+                cout << 1 << "\t";
             } else{
-                cout << 0 << " ";
+                cout << 0 << "\t";
             }
         }
         cout << endl;
@@ -78,15 +79,15 @@ void jobNestedLoopIfElse(){
     cout << endl;
 
     // Tampilan 3
-    printf("-- Tampilan #3 --\n");
-    for (int i = 0; i < 5; i++){
+    printf("-- Tampilan 3 --\n");
+    for (int i = 0; i < DIMENSI; i++){
 
-        for (int j = 0; j < 5; j++){
+        for (int j = 0; j < DIMENSI; j++){
 
             if (i == j){
-                cout << 0 << " ";
+                cout << 0 << "\t";
             } else{
-                cout << 1 << " ";
+                cout << 1 << "\t";
             }
         }
         cout << endl;
@@ -97,44 +98,7 @@ void jobNestedLoopIfElse(){
 
 int main(){
     jobArray();
-    jobNestedLoopIfElse();
+    jobLoopIfElse();
 
     return 0;
 }
-
-/* 
-# Hasil jobArray():
-########## Job Array ##########
-
-No.    | Data 1 | Data 2 | Data 3 | Data 4 | Jumlah | Rerata
-1      | 6      | 4      | 4      | 4      | 18     | 4.50
-2      | 7      | 8      | 2      | 6      | 23     | 5.75
-3      | 5      | 8      | 6      | 3      | 22     | 5.50
-------------------------------------------------------------
-Jumlah | 18     | 20     | 12     | 13     |
-Rerata | 6.00   | 6.67   | 4.00   | 4.33   |
-
-# Hasil jobNestedLoopIfElse():
-########## Job Nested Loop If Else ##########
-
--- Tampilan #1 --
-1 1 0 0 0        
-1 1 0 0 0        
-1 1 0 0 0        
-1 1 0 0 0        
-1 1 0 0 0        
-
--- Tampilan #2 --
-1 1 1 1 1        
-1 1 1 1 1        
-1 1 1 1 1        
-0 0 0 0 0        
-0 0 0 0 0        
-
--- Tampilan #3 --
-0 1 1 1 1        
-1 0 1 1 1        
-1 1 0 1 1        
-1 1 1 0 1        
-1 1 1 1 0
-*/
